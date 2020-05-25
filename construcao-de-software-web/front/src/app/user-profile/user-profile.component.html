@@ -1,0 +1,94 @@
+<div class="body">
+
+  <div class="bodyContainer">
+    <div>
+      <div class="lateralMenu" *ngIf="userDetails">
+        <img  src={{info.avatar_url}} width=" 83" height="83" alt="Usuário" />
+
+        <h3>{{info.name}}</h3>
+        <span>{{userDetails.email}}</span>
+
+        <ul class="menu">
+          <li>
+            <a [routerLink]="['/mensagens']">
+              <i class="fa fa-comment-o" style="font-size: 17px" aria-hidden="true"></i>
+              <p>Mensagens</p>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/userprofile']">
+              <i class="fa fa-user-o" style="font-size: 17px" aria-hidden="true"></i>
+              <p>Meu Perfil</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" (click)="onLogout()">
+              <i class="fa fa-sign-out logout-icon" style="font-size: 17px" aria-hidden="true"></i>
+              <p class="logout">Sair</p>
+            </a>
+          </li>
+        </ul>
+
+        <p class="version">Versão 1.0</p>
+      </div>
+
+    </div>
+
+    <div class="profile">
+      <div class="infoContainer">
+        <div class="info">
+          <h2>{{info.name}}</h2>
+          <p class="bio">
+            {{info.bio}}
+          </p>
+          <p>
+            <strong>Empresa: </strong>
+            {{info.company}}
+          </p>
+          <p>
+            <strong>E-mail: </strong>
+            {{userDetails.email}}
+          </p>
+          <p>
+            <strong>Blog:</strong>
+            {{info.blog}}
+          </p>
+
+          <div class="overview">
+            <div class="item">
+              <h2>
+                <strong>{{info.public_repos}}</strong>
+              </h2>
+              <p>
+                <small>Repositórios</small>
+              </p>
+            </div>
+
+            <div class="item">
+              <h2>
+                <strong>{{info.public_gists}}</strong>
+              </h2>
+              <p>
+                <small>Gists</small>
+              </p>
+            </div>
+
+            <div class="item">
+              <h2>
+                <strong>{{info.followers}}</strong>
+              </h2>
+              <p>
+                <small>Seguidores</small>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pictureContainer">
+          <img src={{info.avatar_url}} alt="Usuário">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
